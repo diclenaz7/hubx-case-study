@@ -50,10 +50,12 @@ export default function PaywallScreen() {
           <View style={{ flexDirection: "row", flex: 1 }}>
             <ScrollView
               horizontal
-              contentContainerStyle={styles.featuresContainer}
+              contentContainerStyle={[
+                styles.featuresContainer,
+                { paddingHorizontal: 20, paddingRight: 200 },
+              ]}
               showsHorizontalScrollIndicator={false}
             >
-              <View style={{ width: 8 }} />
               <PaywallFeatureCard
                 title="Unlimited"
                 desc="Plant Identify"
@@ -135,6 +137,7 @@ const styles = StyleSheet.create({
   subtitle: { fontSize: 16, color: "#fff", marginTop: 4 },
   featuresContainer: {
     gap: 12,
+    alignItems: "center",
   },
   plansContainer: { marginTop: 15, marginBottom: 10 },
   ctaButton: {

@@ -1,3 +1,5 @@
+import { Colors } from "@/constants/Colors";
+import { FontSizes } from "@/constants/FontSizes";
 import { useRouter } from "expo-router";
 import React, { useEffect, useRef, useState } from "react";
 import {
@@ -112,8 +114,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   image: {
-    width: "80%",
-    height: "60%",
+    width: "100%",
+    height: "70%",
     marginBottom: 20,
   },
   titleImage: {
@@ -132,12 +134,16 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   button: {
-    backgroundColor: "#4CAF50",
+    backgroundColor: Colors.green1,
     paddingVertical: 14,
     paddingHorizontal: 60,
     borderRadius: 8,
   },
-  buttonText: { color: "#fff", fontSize: 16, fontWeight: "600" },
+  buttonText: {
+    color: Colors.white,
+    fontSize: FontSizes.medium,
+    fontWeight: "600",
+  },
   dots: {
     flexDirection: "row",
     justifyContent: "center",
@@ -148,7 +154,7 @@ const styles = StyleSheet.create({
   dot: {
     width: 8,
     height: 8,
-    backgroundColor: "#4CAF50",
+    backgroundColor: Colors.green1,
     borderRadius: 4,
     marginHorizontal: 4,
   },
