@@ -51,10 +51,11 @@ export default function PlanOption({
 
 const styles = StyleSheet.create({
   planOption: {
-    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    backgroundColor: Colors.transparentBackground,
     borderRadius: 14,
     padding: 16,
     marginBottom: 12,
+    marginHorizontal: 20,
     flexDirection: "row",
   },
   planTitle: {

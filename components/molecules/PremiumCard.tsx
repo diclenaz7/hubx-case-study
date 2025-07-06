@@ -53,8 +53,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   premiumImage: {
-    width: 36,
-    height: 30,
+    width: 45,
+    height: 37.5,
     marginRight: 8,
+    marginTop: 6,
   },
 });

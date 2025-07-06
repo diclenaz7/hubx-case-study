@@ -2,6 +2,7 @@ import PaywallFeatureCard from "@/components/atoms/PaywallFeatureCard";
 import PlanOption from "@/components/atoms/PaywallPlanOption";
 import { Colors } from "@/constants/Colors";
 import { FontSizes } from "@/constants/FontSizes";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { useRouter } from "expo-router";
 import React from "react";
 import {
@@ -31,7 +32,7 @@ export default function PaywallScreen() {
         onPress={() => router.replace("/")}
         style={styles.closeBtn}
       >
-        <Text style={styles.closeText}>×</Text>
+        <MaterialIcons name="close" size={18} color={Colors.white} />
       </TouchableOpacity>
 
       <ScrollView
@@ -46,23 +47,26 @@ export default function PaywallScreen() {
             <Text style={styles.subtitle}>Access All Features</Text>
           </View>
 
-          <ScrollView
-            horizontal
-            contentContainerStyle={styles.featuresContainer}
-            showsHorizontalScrollIndicator={false}
-          >
-            <PaywallFeatureCard
-              title="Unlimited"
-              desc="Plant Identify"
-              icon="photo"
-            />
-            <PaywallFeatureCard title="Faster" desc="Process" icon="plant" />
-            <PaywallFeatureCard
-              title="Detailed"
-              desc="Plant Guides"
-              icon="plant"
-            />
-          </ScrollView>
+          <View style={{ flexDirection: "row", flex: 1 }}>
+            <ScrollView
+              horizontal
+              contentContainerStyle={styles.featuresContainer}
+              showsHorizontalScrollIndicator={false}
+            >
+              <View style={{ width: 8 }} />
+              <PaywallFeatureCard
+                title="Unlimited"
+                desc="Plant Identify"
+                icon="photo"
+              />
+              <PaywallFeatureCard title="Faster" desc="Process" icon="plant" />
+              <PaywallFeatureCard
+                title="Detailed"
+                desc="Plant Guides"
+                icon="plant"
+              />
+            </ScrollView>
+          </View>
 
           <View style={styles.plansContainer}>
             <PlanOption
@@ -79,7 +83,6 @@ export default function PaywallScreen() {
               onPress={() => setSelectedPlan("year")}
             />
           </View>
-
           <TouchableOpacity style={styles.ctaButton}>
             <Text style={styles.ctaText}>Try free for 3 days</Text>
           </TouchableOpacity>
@@ -87,7 +90,7 @@ export default function PaywallScreen() {
           <Text style={styles.footer}>
             After the 3-day free trial period you’ll be charged ₺274.99 per year
             unless you cancel before the trial expires. Yearly Subscription is
-            Auto-Renewable{"\n"}
+            Auto-Renewable
           </Text>
           <Text style={[styles.footer, { fontSize: 12, color: "#888" }]}>
             Terms • Privacy • Restore
@@ -115,7 +118,7 @@ const styles = StyleSheet.create({
     top: 50,
     right: 20,
     zIndex: 10,
-    backgroundColor: "rgba(0,0,0,0.5)",
+    backgroundColor: Colors.transparentBackground4,
     width: 32,
     height: 32,
     borderRadius: 16,
@@ -126,25 +129,20 @@ const styles = StyleSheet.create({
   scrollContent: {
     flexGrow: 1,
     justifyContent: "flex-end",
-    padding: 12,
   },
-  headerContainer: { marginBottom: 20 },
+  headerContainer: { marginBottom: 20, marginHorizontal: 20 },
   title: { fontSize: 28, fontWeight: "700", color: "#fff" },
   subtitle: { fontSize: 16, color: "#fff", marginTop: 4 },
   featuresContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
     gap: 12,
-    marginTop: 20,
   },
-  plansContainer: { paddingVertical: 20 },
+  plansContainer: { marginTop: 15, marginBottom: 10 },
   ctaButton: {
     backgroundColor: Colors.green2,
     marginHorizontal: 20,
     padding: 16,
     borderRadius: 14,
     alignItems: "center",
-    marginTop: 10,
   },
   ctaText: {
     color: Colors.white,

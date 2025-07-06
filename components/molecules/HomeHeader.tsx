@@ -1,12 +1,7 @@
 import PlantSearchBar from "@/components/atoms/PlantSearchBar";
+import { FontSizes } from "@/constants/FontSizes";
 import React from "react";
-import {
-  Dimensions,
-  ImageBackground,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeHeader() {
@@ -29,19 +24,18 @@ export default function HomeHeader() {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    height: Dimensions.get("window").height * 0.25,
     paddingHorizontal: 16,
     paddingTop: 20,
     justifyContent: "center",
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: FontSizes.large,
     fontWeight: "500",
     marginBottom: 4,
   },
   title: {
-    fontSize: 24,
+    fontSize: FontSizes.xxxLarge,
     fontWeight: "bold",
-    marginBottom: 12,
+    marginBottom: 4,
   },
 });

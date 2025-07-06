@@ -1,9 +1,17 @@
-import { View, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function MyGardenScreen() {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>MY GARDEN PAGE</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

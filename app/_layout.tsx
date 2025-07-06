@@ -23,7 +23,7 @@ export default function RootLayout() {
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
         <RootNavigator />
-        <StatusBar style="auto" />
+        <StatusBar style="dark" />
       </Provider>
     </QueryClientProvider>
   );

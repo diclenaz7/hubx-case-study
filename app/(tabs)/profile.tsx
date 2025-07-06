@@ -1,3 +1,5 @@
+import { Colors } from "@/constants/Colors";
+import { FontSizes } from "@/constants/FontSizes";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { resetOnboarding } from "@/redux/slices/onboardingSlice";
 import React from "react";
@@ -17,7 +19,7 @@ export default function ProfileScreen() {
         style={styles.button}
         onPress={() => dispatch(resetOnboarding())}
       >
-        <Text style={styles.buttonText}>Set onboarding = false</Text>
+        <Text style={styles.buttonText}>RESET ONBOARDING</Text>
       </TouchableOpacity>
     </View>
   );
@@ -27,10 +29,14 @@ const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: "center", alignItems: "center" },
   text: { fontSize: 18, marginBottom: 20 },
   button: {
-    backgroundColor: "#4CAF50",
+    backgroundColor: Colors.green1,
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 8,
   },
-  buttonText: { color: "#fff", fontSize: 16, fontWeight: "600" },
+  buttonText: {
+    color: Colors.white,
+    fontSize: FontSizes.medium,
+    fontWeight: "600",
+  },
 });

@@ -34,15 +34,15 @@ export default function PaywallFeatureCard({
 
 const styles = StyleSheet.create({
   featureCard: {
-    backgroundColor: "rgba(255,255,255,0.1)",
+    backgroundColor: Colors.transparentBackground,
     padding: 16,
     borderRadius: 14,
     justifyContent: "center",
     width: "50%",
-    height: 150,
+    height: 130,
   },
   featureTitle: {
-    color: "#fff",
+    color: Colors.white,
     fontWeight: "bold",
     fontSize: FontSizes.medium,
     marginBottom: 4,
@@ -51,7 +51,11 @@ const styles = StyleSheet.create({
   iconContainer: {
     backgroundColor: "rgba(0,0,0,0.2)",
     padding: 12,
-    borderRadius: 2,
+    borderRadius: 8,
     marginBottom: 12,
+    width: 40,
+    height: 40,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

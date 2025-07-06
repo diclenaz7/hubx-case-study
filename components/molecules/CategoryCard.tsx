@@ -13,7 +13,11 @@ export default function CategoryCard({
   return (
     <View style={styles.card}>
       <Image source={{ uri: image }} style={styles.image} />
-      <Text style={styles.text}>{name}</Text>
+      <View style={styles.textContainer}>
+        <Text style={styles.text} numberOfLines={2}>
+          {name}
+        </Text>
+      </View>
     </View>
   );
 }
@@ -29,19 +33,20 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 5,
     shadowOffset: { width: 0, height: 2 },
-    borderWidth: 1,
+    borderWidth: 0.5,
     borderColor: Colors.grey2,
   },
   image: { width: "100%", height: 150 },
-  text: {
+  textContainer: {
     position: "absolute",
-    top: 4,
-    left: 4,
-    right: 0,
-    padding: 12,
+    top: 16,
+    left: 16,
+    maxWidth: "70%",
+    flexShrink: 1,
+  },
+  text: {
     fontSize: FontSizes.medium,
     fontWeight: "500",
-    width: "70%",
     flexWrap: "wrap",
   },
 });
